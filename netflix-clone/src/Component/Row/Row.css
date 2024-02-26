@@ -1,0 +1,22 @@
+.movie_row .left_scroll,
+.movie_row .right_scroll {
+  display: none;
+  position: initial;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  font-size: 40px;
+  background-color: rgba(0, 5, 20, 0.5);
+  padding: 10px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.movie_row:hover .left_scroll,
+.movie_row:hover .right_scroll {
+  display: flex;
+}
+.left_scroll {
+  left: 0;
+}

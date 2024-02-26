@@ -1,0 +1,13 @@
+.nav_search {
+  padding-right: 10px;
+}
+
+.nav_search input {
+  height: 24px;
+}
+
+.nav_search .cancel-button,
+.nav_search .search-button {
+  height: 30px;
+  margin: 0;
+}

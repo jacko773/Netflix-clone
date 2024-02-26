@@ -1,5 +1,8 @@
-import Row from "./Row";
-import request from "../request";
+import Row from "../Row/Row";
+import request from "../../API/request";
+import Nav from "../Nav";
+import Banner from "../Banner";
+
 const movie = [
   { title: "Netflix original", url: `${request.fetchNetflixOriginal}` },
   { title: "Treding", url: `${request.fetchTrending}` },
@@ -10,8 +13,17 @@ const movie = [
   { title: "Romance movies", url: `${request.fetchRomanceMovies}` },
   { title: "Documentry", url: `${request.fetchDocumentries}` },
 ];
+
 const Home = () => {
-  return movie.map((data, index) => <Row {...data} index={index} />);
+  return (
+    <>
+      <Nav></Nav>
+      <Banner></Banner>
+      {movie.map((data, index) => (
+        <Row {...data} index={index} />
+      ))}
+    </>
+  );
 };
 
 export default Home;
