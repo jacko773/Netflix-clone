@@ -1,0 +1,15 @@
+.movie_card {
+  transition: width 2s;
+}
+
+.movie_card:hover .movie_poster {
+  display: none;
+}
+
+.movie_card:hover .movie_video {
+  display: initial;
+}
+
+.movie_card .movie_video {
+  display: none;
+}

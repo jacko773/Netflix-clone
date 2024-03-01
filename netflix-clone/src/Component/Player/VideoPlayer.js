@@ -1,31 +1,40 @@
-import React from "react";
-import YouTube from "react-youtube";
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
+import VolumeOffOutlinedIcon from "@mui/icons-material/VolumeOffOutlined";
+import VolumeUpOutlinedIcon from "@mui/icons-material/VolumeUpOutlined";
+import "./VideoPlayer.css";
 
-function onPlayerReady(event) {
-  var embedCode = event.target.getVideoEmbedCode();
-  event.target.playVideo();
-  //   if (document.getElementById("embed-code")) {
-  //     document.getElementById("embed-code").innerHTML = embedCode;
-  //   }
-}
-
-const VideoPlayer = ({ videoId, onEnd }) => {
-  const opts = {
-    height: "450",
-    width: (window.innerWidth / 4) * 3,
-    playerVars: {
-      origin: window.location.origin,
-      autoplay: 0,
-    },
-  };
-  console.log(`videoId ${JSON.stringify(videoId)}`);
+const VideoPlayer = ({ url, width, height, controls, muted, playing }) => {
+  const [isMuted, setIsMuted] = useState(muted);
   return (
-    <YouTube
-      videoId={videoId}
-      opts={opts}
-      // onReady={onPlayerReady}
-      onEnd={onEnd}
-    />
+    <div className="player-wrapper">
+      <ReactPlayer
+        url={url}
+        controls={controls}
+        width={width}
+        height={height}
+        muted={isMuted}
+        playing={playing}
+        className="videoPlayer"
+      />
+      {!controls && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: 75,
+            right: 50,
+            color: "whitesmoke",
+          }}
+          onClick={() => setIsMuted(!isMuted)}
+        >
+          {isMuted ? (
+            <VolumeOffOutlinedIcon fontSize="large" />
+          ) : (
+            <VolumeUpOutlinedIcon fontSize="large" />
+          )}
+        </div>
+      )}
+    </div>
   );
 };
 

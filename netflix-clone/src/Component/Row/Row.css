@@ -1,7 +1,7 @@
 .movie_row .left_scroll,
 .movie_row .right_scroll {
   display: none;
-  position: initial;
+  /* position: initial; */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -20,3 +20,13 @@
 .left_scroll {
   left: 0;
 }
+
+/* .movie_card:hover .movie_poster {
+  display: none;
+}
+.movie_video {
+  display: none;
+}
+.movie_card:hover .movie_video {
+  display: inherit;
+} */

@@ -1,14 +1,12 @@
 import instance from "../../API/axios";
 import { useState, useEffect } from "react";
-import movieTrailer from "movie-trailer";
 import VideoPlayer from "../Player/VideoPlayer";
 
 import "./Row.css";
+import Poster from "../Poster";
 
-const baseURL_image = "https://image.tmdb.org/t/p/w500";
 const Row = ({ title, url, index }) => {
   const [movies, setMovies] = useState([]);
-  const [movieTrailerId, setMovieTrailerId] = useState(null);
 
   useEffect(() => {
     instance.get(url).then((res) => setMovies(res.data.results));
@@ -21,22 +19,6 @@ const Row = ({ title, url, index }) => {
     } else {
       element.scrollLeft -= window.innerWidth / 2;
     }
-  };
-
-  const getMovieTrailer = (name) => {
-    movieTrailer(name)
-      .then((response) => {
-        const urlParams = new URLSearchParams(new URL(response).search);
-        const videoId = urlParams.get("v");
-        setMovieTrailerId(videoId);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const onEnd = (data) => {
-    setMovieTrailerId(null);
   };
 
   return (
@@ -56,20 +38,14 @@ const Row = ({ title, url, index }) => {
             display: "flex",
             overflowY: "hidden",
             overflowX: "scroll",
-            marginLeft: 10,
+            marginLeft: 5,
+            marginRight: 5,
             scrollbarWidth: "none",
             transition: "transform 500ms",
           }}
         >
           {movies.map((movie) => (
-            <img
-              src={baseURL_image + movie.poster_path}
-              width={200}
-              height={300}
-              style={{ marginRight: 8, cursor: "pointer" }}
-              alt={movie.name || movie.title}
-              onClick={() => getMovieTrailer(movie.name || movie.title)}
-            ></img>
+            <Poster movie={movie}></Poster>
           ))}
         </div>
         <div
@@ -79,19 +55,6 @@ const Row = ({ title, url, index }) => {
         >
           <a>❯</a>
         </div>
-      </div>
-      <div
-        style={{
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          marginTop: 20,
-        }}
-      >
-        {movieTrailerId && (
-          <VideoPlayer videoId={movieTrailerId} onEnd={onEnd}></VideoPlayer>
-        )}
       </div>
     </div>
   );

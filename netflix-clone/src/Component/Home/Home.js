@@ -1,6 +1,5 @@
 import Row from "../Row/Row";
 import request from "../../API/request";
-import Nav from "../Nav";
 import Banner from "../Banner";
 
 const movie = [
@@ -17,7 +16,6 @@ const movie = [
 const Home = () => {
   return (
     <>
-      <Nav></Nav>
       <Banner></Banner>
       {movie.map((data, index) => (
         <Row {...data} index={index} />

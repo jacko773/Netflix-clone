@@ -1,0 +1,12 @@
+.videoPlayer video {
+  object-fit: cover;
+}
+
+.videoPlayer {
+  margin-top: 75px;
+  overflow-y: hidden;
+}
+
+.brightness {
+  filter: brightness(100);
+}
