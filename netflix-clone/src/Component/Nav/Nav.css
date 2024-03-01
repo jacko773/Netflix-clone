@@ -11,9 +11,10 @@
   z-index: 30;
 }
 .nav_logo_image {
-  height: 30px;
+  height: 70px;
+  width: 200px;
   object-fit: contain;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 .navbar_links {

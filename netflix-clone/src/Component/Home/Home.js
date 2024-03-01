@@ -3,7 +3,7 @@ import request from "../../API/request";
 import Banner from "../Banner";
 
 const movie = [
-  { title: "Netflix original", url: `${request.fetchNetflixOriginal}` },
+  // { title: "Netflix original", url: `${request.fetchNetflixOriginal}` },
   { title: "Treding", url: `${request.fetchTrending}` },
   { title: "Top rated", url: `${request.fetchTopRated}` },
   { title: "Action Movies", url: `${request.fetchActionMovies}` },

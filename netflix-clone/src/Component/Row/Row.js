@@ -1,6 +1,5 @@
 import instance from "../../API/axios";
 import { useState, useEffect } from "react";
-import VideoPlayer from "../Player/VideoPlayer";
 
 import "./Row.css";
 import Poster from "../Poster";
