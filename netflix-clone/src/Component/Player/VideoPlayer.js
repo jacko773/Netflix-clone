@@ -4,7 +4,15 @@ import VolumeOffOutlinedIcon from "@mui/icons-material/VolumeOffOutlined";
 import VolumeUpOutlinedIcon from "@mui/icons-material/VolumeUpOutlined";
 import "./VideoPlayer.css";
 
-const VideoPlayer = ({ url, width, height, controls, muted, playing }) => {
+const VideoPlayer = ({
+  url,
+  width,
+  height,
+  controls,
+  muted,
+  playing,
+  className,
+}) => {
   const [isMuted, setIsMuted] = useState(muted);
   return (
     <div className="player-wrapper">
@@ -15,7 +23,7 @@ const VideoPlayer = ({ url, width, height, controls, muted, playing }) => {
         height={height}
         muted={isMuted}
         playing={playing}
-        className="videoPlayer"
+        className={className}
       />
       {!controls && (
         <div

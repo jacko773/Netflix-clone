@@ -1,5 +1,6 @@
 .movie_card {
   transition: width 2s;
+  margin-right: 5px;
 }
 
 .movie_card:hover .movie_poster {
@@ -12,4 +13,28 @@
 
 .movie_card .movie_video {
   display: none;
+}
+
+/* .movie_video, */
+.movie_poster {
+  -webkit-animation: move cubic-bezier(0.55, 0.055, 0.675, 0.19) ease-out;
+  animation: move cubic-bezier(0.075, 0.82, 0.165, 1) ease-out;
+}
+
+@-webkit-keyframes move {
+  0% {
+    margin-top: 42px;
+  }
+  100% {
+    margin-top: 2px;
+  }
+}
+
+@keyframes move {
+  0% {
+    margin-top: 42px;
+  }
+  100% {
+    margin-top: 2px;
+  }
 }

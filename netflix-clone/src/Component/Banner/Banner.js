@@ -6,7 +6,7 @@ const Banner = () => {
     <div>
       <VideoPlayer
         pip={true}
-        className="video"
+        // className="video"
         url="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
         width="100%"
         height={window.innerHeight - 100}
@@ -14,6 +14,7 @@ const Banner = () => {
         autoPlay={true}
         muted={true}
         playing={true}
+        className="bannerPalyer"
       />
     </div>
   );

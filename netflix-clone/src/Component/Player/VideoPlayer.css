@@ -3,7 +3,15 @@
 }
 
 .videoPlayer {
-  /* margin-top: 75px; */
+  overflow-y: hidden;
+}
+
+.bannerPalyer video {
+  object-fit: cover;
+}
+
+.bannerPalyer {
+  margin-top: 75px;
   overflow-y: hidden;
 }
 
